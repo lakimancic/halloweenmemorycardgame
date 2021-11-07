@@ -1,54 +1,7 @@
 {
-    "easy": [
-        {
-            "name": "Lazar",
-            "time": 37,
-            "moves": 32
-        },
-        {
-            "name": "laki",
-            "time": 40,
-            "moves": 32
-        },
-        {
-            "name": "lakis",
-            "time": 4,
-            "moves": 32
-        }
-    ],
+    "easy": [],
     "medium": [],
     "hard": [],
     "extreme": [],
-    "multiplayer": [
-        {
-            "player1": "laki",
-            "player2": "mika",
-            "time": 134,
-            "moves": 68
-        },
-        {
-            "player1": "laki",
-            "player2": "mika",
-            "time": 198,
-            "moves": 90
-        },
-        {
-            "player1": "laki",
-            "player2": "mika",
-            "time": 117,
-            "moves": 80
-        },
-        {
-            "player1": "Frt",
-            "player2": "afasf",
-            "time": 172,
-            "moves": 82
-        },
-        {
-            "player1": "Laki",
-            "player2": "Isa",
-            "time": 260,
-            "moves": 78
-        }
-    ]
+    "multiplayer": []
 }
