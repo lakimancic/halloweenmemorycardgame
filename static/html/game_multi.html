@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/mp_game.js"></script>
+    <link rel="stylesheet" href="/css/gamemulti.css">
+    <title>Multiplayer Game</title>
+</head>
+<body>
+    <div class="container">
+        <header>Multiplayer Game</header>
+        <div class="gameid">Game ID : <span class="value"></span></div>
+        <div class="players">
+            <div class="player1">
+                Player 1 : <span class="player-name"></span> 
+            </div>
+            <div class="player2">
+                Player 2 : <span class="player-name"></span> 
+            </div>
+        </div>
+        <div class="card-grid">
+        </div>
+        <div class="score-board">
+            <div class="time" style="display: none;">
+                <span class="time-text">Time:</span>
+                <span class="time-value">00:00</span>
+            </div>
+            <div class="status">
+                
+            </div>
+            <div class="moves" style="display: none;">
+                <span class="moves-text">Moves:</span>
+                <span class="moves-value">0</span>
+            </div>
+        </div>
+        <div class="start-con">
+            <div class="start-menu">
+                <p>Game is Ready !</p>
+                <button class="start-btn">Start</button>
+            </div>
+        </div>
+        <div class="gameover-con">
+            <div class="gameover-menu">
+                <p class="gameover-title">You Won !</p>
+                <p>Time : <span class="gameover-time">00:00</span></p>
+                <p>Moves : <span class="gameover-moves">0</span></p>
+                <p>Score is saved on server !</p>
+                <button class="gameover-btn">Main Menu</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

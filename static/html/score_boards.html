@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/score_boards.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Score Boards</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            Score Boards
+        </header>
+        <div class="content">
+            <div class="menu">
+                <div class="menu_item selected">Easy</div>
+                <div class="menu_item">Medium</div>
+                <div class="menu_item">Hard</div>
+                <div class="menu_item">Extreme</div>
+                <div class="menu_item">Multiplayer</div>
+            </div>
+            <div class="table-con">
+                <table id="table">
+                    <tr class="first-row">
+                        <td>Name : </td>
+                        <td>Time : </td>
+                        <td>Moves : </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="options">
+                <button id="sort_time">Sort by Time</button>
+                <button id="sort_moves">Sort by Moves</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(async function(){
+        var table = $('#table');
+        let scores;
+        let selected = 0;
+        let selectpom = [
+            "easy", "medium", "hard", "extreme", "multiplayer"
+        ];
+        // Get scores /scores
+        await $.ajax({
+            url: '/scores',
+            type: 'GET',
+            dataType: 'json',
+            success: function(data){
+                scores = data;
+            }
+        });
+        const updateTable = () => {
+            table.empty();
+            if(selected < 4){
+                table.append(`<tr class="first-row">
+                    <td>Name : </td>
+                    <td>Time : </td>
+                    <td>Moves : </td>
+                </tr>`);
+                for(let i = 0; i < scores[selectpom[selected]].length; i++){
+                    table.append(`<tr>
+                        <td>${scores[selectpom[selected]][i].name}</td>
+                        <td>${scores[selectpom[selected]][i].time}</td>
+                        <td>${scores[selectpom[selected]][i].moves}</td>
+                    </tr>`);
+                }
+            }
+            else{
+                table.append(`<tr class="first-row">
+                    <td>Player 1 : </td>
+                    <td>Player 2 : </td>
+                    <td>Time : </td>
+                    <td>Moves : </td>
+                </tr>`);
+                for(let i = 0; i < scores[selectpom[selected]].length; i++){
+                    table.append(`<tr>
+                        <td>${scores[selectpom[selected]][i].player1}</td>
+                        <td>${scores[selectpom[selected]][i].player2}</td>
+                        <td>${scores[selectpom[selected]][i].time}</td>
+                        <td>${scores[selectpom[selected]][i].moves}</td>
+                    </tr>`);
+                }
+            }
+        }
+
+        updateTable();
+
+        $(".menu_item").click(function(){
+            $(".menu_item").removeClass("selected");
+            $(this).addClass("selected");
+            selected = $(this).index();
+            updateTable();
+        });
+
+        $("#sort_time").click(function(){
+            scores[selectpom[selected]].sort((a, b) => a.time - b.time);
+            updateTable();
+        });
+
+        $("#sort_moves").click(function(){
+            scores[selectpom[selected]].sort((a, b) => a.moves - b.moves);
+            updateTable();
+        });
+    });
+</script>
+</html>

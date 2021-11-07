@@ -1,0 +1,151 @@
+@font-face {
+    font-family: Shlop;
+    src: url('/fonts/shlop.ttf');
+}
+
+html {
+    height: 100%;
+
+    font-size: 60%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    min-height: 100%;
+
+    background: url('/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    font-family: Shlop, Arial, Helvetica, sans-serif;
+
+    color: orange;
+    text-shadow: 0px 0px 8px #000000;
+    text-align: center;
+    font-size: 8rem;
+    padding: 1rem 0;
+    margin-bottom: 3rem;
+}
+
+.modes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    min-width: 30%;
+    border-radius: 1rem;
+}
+
+.modes button {
+    background-color: black;
+    color: orange;
+    border: none;
+    font-family: Shlop, Arial, Helvetica, sans-serif;
+    font-size: 4rem;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    margin: 2rem 0;
+    cursor: pointer;
+}
+
+.modes input {
+    background-color: black;
+    color: orange;
+    border: none;
+    font-family: Shlop, Arial, Helvetica, sans-serif;
+    font-size: 4rem;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    margin: 2rem;
+    border: 0;
+    outline: none;
+}
+
+#name {
+    margin-bottom: 5rem;
+}
+
+#gameid {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    width: 30rem;
+}
+
+@media only screen and (max-width:1440px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media only screen and (max-width:1024px) {
+    html {
+        font-size: 50%;
+    }
+
+    .modes {
+        min-width: 50%;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    html {
+        font-size: 60%;
+    }
+
+    header {
+        font-size: 7rem;
+        margin: 2rem;
+    }
+
+    .modes {
+        min-width: 70%;
+    }
+}
+
+@media only screen and (max-width:425px) {
+    html {
+        font-size: 55%;
+    }
+
+    header {
+        font-size: 6rem;
+        margin: 2rem;
+    }
+
+    .modes {
+        min-width: 80%;
+    }
+}
+
+@media only screen and (max-width:375px) {
+    html {
+        font-size: 45%;
+    }
+
+    header {
+        font-size: 6rem;
+        margin: 2rem;
+    }
+
+    .modes {
+        min-width: 80%;
+    }
+}

@@ -1,0 +1,332 @@
+@font-face {
+    font-family: Shlop;
+    src: url('/fonts/shlop.ttf');
+}
+
+html {
+    height: 100%;
+
+    font-size: 60%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    min-height: 100%;
+
+    background: url('/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    font-family: Shlop, Arial, Helvetica, sans-serif;
+
+    color: orange;
+    text-shadow: 0px 0px 8px #000000;
+    text-align: center;
+    font-size: 5rem;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.gameid {
+    font-family: Shlop, Arial, Helvetica, sans-serif;
+
+    color: orange;
+    text-shadow: 0px 0px 8px #000000;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.gameid .value {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5rem;
+}
+
+.players {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    font-family: Shlop, Arial, Helvetica, sans-serif;
+
+    color: orange;
+    text-shadow: 0px 0px 8px #000000;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+
+    width: 70vw;
+}
+
+.player1, .player2 {
+    width: 50%;
+    text-align: center;
+}
+
+/* CARD GRID */
+
+.card-grid {
+    width: 70vw;
+    height: 35vw;
+}
+
+.card-grid-row {
+    display: flex;
+    flex-direction: row;
+    justify-items: stretch;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card-item {
+    background-color: transparent;
+    perspective: 1000px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.card-item-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.card-item-front, .card-item-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+.card-item-front {
+    background-color: black;
+    color: orange;
+    transform: rotateY(0deg);
+    font-size: 10vw;
+    font-family: Shlop, Arial, Helvetica, sans-serif;
+    border-radius: 10%;
+    box-sizing: border-box;
+    padding-top: 6%;
+}
+
+.card-item-back {
+    position: relative;
+    background-color: black;
+    color: white;
+    transform: rotateY(180deg);
+    border-radius: 10%;
+}
+
+.card-item-back img {
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+}
+
+.card-item-flipped .card-item-inner {
+    transform: rotateY(180deg);
+}
+
+
+.score-board {
+    margin: 2rem 0;
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    font-family: Shlop, Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+    color: orange;
+}
+
+.time, .moves {
+    text-align: center;
+}
+
+.start-con {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.781);
+
+    font-family: Shlop, Arial, Helvetica, sans-serif;
+    color: orange;
+    font-size: 4rem;
+
+    min-width: 40%;
+
+    border-radius: 2rem;
+}
+
+.start-menu p {
+    margin: 2rem 0;
+}
+
+.start-btn {
+    background-color: orange;
+    color: black;
+    border: none;
+    font-family: Shlop, Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: 4rem;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    margin: 2rem 0;
+    cursor: pointer;
+}
+
+.gameover-con {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameover-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.781);
+
+    font-family: Shlop, Arial, Helvetica, sans-serif;
+    color: orange;
+    font-size: 4rem;
+
+    min-width: 40%;
+
+    border-radius: 2rem;
+}
+
+.gameover-menu p {
+    margin: 2rem 0;
+}
+
+.gameover-title {
+    font-size: 7rem;
+}
+
+.gameover-menu button {
+    background-color: orange;
+    color: black;
+    border: none;
+    font-family: Shlop, Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: 4rem;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    margin: 2rem 0;
+    cursor: pointer;
+}
+
+@media only screen and (max-width:1440px) {
+    html {
+        font-size: 45%;
+    }
+}
+
+@media only screen and (max-width:1024px) {
+    html {
+        font-size: 40%;
+    }
+
+    .score-board {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width:768px){
+    html {
+        font-size: 45%;
+    }
+
+    .card-grid {
+        width: 90vw;
+        height: 45vw;
+    }
+
+    .score-board {
+        width: 60%;
+    }
+
+    .start-menu {
+        min-width: 50%;
+    }
+
+    .gameover-menu {
+        min-width: 50%;
+    }
+}
+
+@media only screen and (max-width:425px) {
+    html {
+        font-size: 40%;
+    }
+
+    .start-menu {
+        min-width: 70%;
+    }
+
+    .gameover-menu {
+        min-width: 70%;
+    }
+
+    .card-grid {
+        width: 98vw;
+        height: 49vw;
+    }
+
+    .score-board {
+        width: 90%;
+    }
+
+    .players {
+        width: 100%;
+    }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "halloweenmemorycardgame",
+  "version": "1.0.0",
+  "description": "This is halloween memory card game made for DressCode Halloween Hackaton !",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+	"build": "node index.js"
+  },
+  "keywords": [
+    "halloween",
+    "memory",
+    "card",
+    "game"
+  ],
+  "author": "Lazar Mancic",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.3.1"
+  }
+}

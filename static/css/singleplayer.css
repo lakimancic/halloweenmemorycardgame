@@ -1,0 +1,280 @@
+@font-face {
+    font-family: Shlop;
+    src: url('/fonts/shlop.ttf');
+}
+
+html {
+    height: 100%;
+
+    font-size: 60%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    min-height: 100%;
+
+    background: url('/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    font-family: Shlop, Arial, Helvetica, sans-serif;
+
+    color: orange;
+    text-shadow: 0px 0px 8px #000000;
+    text-align: center;
+    font-size: 8rem;
+    padding: 1rem 3rem;
+    margin-bottom: 3rem;
+}
+
+.modes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    min-width: 30%;
+    border-radius: 1rem;
+}
+
+/* Custom radio button in label mode */
+
+.mode {
+    position: relative;
+    display: block;
+    width: 80%;
+
+    font-family: Shlop, Arial, Helvetica, sans-serif;
+    font-size: 3.5rem;
+    color: orange;
+
+    margin: 2rem 0;
+    padding-left: 10rem;
+    box-sizing: border-box;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    cursor: pointer;
+}
+
+.mode input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.mode .checkmark {
+    position: absolute;
+    top: 0.3rem;
+    left: 2rem;
+
+    height: 3.5rem;
+    width: 3.5rem;
+
+    border-radius: 50%;
+    background-color: rgb(221, 195, 144);
+}
+
+.mode:hover input ~ .checkmark {
+    background-color: rgb(194, 145, 55);
+}
+
+.mode input:checked ~ .checkmark {
+    background-color: rgb(68, 50, 16);
+}
+
+.checkmark img {
+    display: none;
+}
+
+.mode input:checked ~ .checkmark img{
+    display: block;
+}
+
+.mode .checkmark img {
+    position: absolute;
+    top: 0.2rem;
+    left: 0.25rem;
+    width: 3rem;
+    height: 3rem;
+}
+
+.custom {
+
+    font-family: Shlop, Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+    color: orange;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.custom label {
+    margin: 1rem 0;
+}
+
+#N, #C, #D{
+    width: 5rem;
+    height: 3.5rem;
+
+    font-size: 2.5rem;
+    font-family: Shlop, Arial, Helvetica, sans-serif;
+
+    border-radius: 0.5rem;
+    border: 0;
+    outline: none;
+
+    background-color: black;
+    color: orange;
+
+    padding: 0 0.5rem;
+
+    text-align: center;
+}
+
+.shuffle {
+    display: block;
+    position: relative;
+    margin-bottom: 1rem;
+    padding-left: 4rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.shuffle input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.shuffle .checkmark {
+    position: absolute;
+    top: 0.3rem;
+    left: 0;
+
+    height: 3rem;
+    width: 3rem;
+
+    background-color: rgb(221, 195, 144);
+}
+
+.shuffle:hover input ~ .checkmark {
+    background-color: rgb(194, 145, 55);
+}
+
+.shuffle input:checked ~ .checkmark {
+    background-color: rgb(68, 50, 16);
+}
+
+.shuffle input:checked ~ .checkmark img{
+    display: block;
+}
+
+.shuffle .checkmark img {
+    position: absolute;
+    top: 0.2rem;
+    left: 0.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+#play {
+    padding: 1rem 7rem;
+    font-size: 3.5rem;
+    margin: 1.5rem 0;
+    border-radius: 1rem;
+    background-color: black;
+    color: orange;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-family: Shlop, Arial, Helvetica, sans-serif;
+}
+
+#play:hover {
+    background-color: rgb(15, 7, 0);
+}
+
+@media only screen and (max-width:1440px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media only screen and (max-width:1024px) {
+    html {
+        font-size: 40%;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    html {
+        font-size: 40%;
+    }
+
+    .modes {
+        min-width: 50%;
+    }
+
+    .mode {
+        font-size: 4.5rem;
+    }
+
+    .mode .checkmark {
+        height: 4.5rem;
+        width: 4.5rem;
+    }
+
+    .mode .checkmark img {
+        position: absolute;
+        top: 0.4rem;
+        left: 0.4rem;
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    #play {
+        font-size: 4.5rem;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    html {
+        font-size: 40%;
+    }
+
+    .modes {
+        min-width: 80%;
+    }
+}

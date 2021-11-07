@@ -1,0 +1,99 @@
+@font-face {
+    font-family: Shlop;
+    src: url('/fonts/shlop.ttf');
+}
+
+html {
+    height: 100%;
+
+    font-size: 60%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    min-height: 100%;
+
+    background: url('/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    font-family: Shlop, Arial, Helvetica, sans-serif;
+
+    color: orange;
+    text-shadow: 0px 0px 8px #000000;
+    text-align: center;
+    font-size: 5rem;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.content {
+    width: 50%;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: orange;
+    text-shadow: 0px 0px 8px #000000;
+    text-align: center;
+    font-size: 1.8rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 2rem;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width:1440px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media only screen and (max-width:1024px) {
+    html {
+        font-size: 40%;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    html {
+        font-size: 40%;
+    }
+
+}
+
+@media only screen and (max-width:425px) {
+    html {
+        font-size: 45%;
+    }
+
+    .content {
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width:320px) {
+    html {
+        font-size: 35%;
+    }
+
+    .content {
+        width: 95%;
+    }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SinglePlayer Game</title>
+    <link rel="stylesheet" href="/css/gamesingle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/game.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            Single Player Game
+        </header>
+        <!-- Memory card game-->
+        <div class="card-grid">
+            
+        </div>
+        <div class="score-board">
+            <div class="time">
+                <span class="time-text">Time:</span>
+                <span class="time-value">00:00</span>
+            </div>
+            <div class="shuffling" style="display: none;">
+                Shuffling...
+            </div>
+            <div class="moves">
+                <span class="moves-text">Moves:</span>
+                <span class="moves-value">0</span>
+            </div>
+        </div>
+        <div class="start-con">
+            <div class="start-menu">
+                <p><span class="start-mode">Easy</span> Mode</p>
+                <p>Number in NxN Grid : <span class="start-N">5</span></p>
+                <!-- Number of matching cards-->
+                <p>Number of matching cards : <span class="start-C">2</span></p>
+                <!-- Number of different cards -->
+                <p>Number of different cards : <span class="start-D">3</span></p>
+                <!-- Shuffeling true / false-->
+                <p>Shuffeling : <span class="start-shuffle">true</span></p>
+                <button class="start-btn">Start</button>
+            </div>
+        </div>
+        <div class="gameover-con">
+            <div class="gameover-menu">
+                <p class="gameover-title">You Won</p>
+                <p>Time : <span class="gameover-time">00:00</span></p>
+                <p>Moves : <span class="gameover-moves">0</span></p>
+                <button class="gameover-btn">Main Menu</button>
+                <input type="text" class="gameover-name" placeholder="Enter your name">
+                <button class="gameover-send">Send Score</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        //console.log(location.href.split('/')[location.href.split('/').length - 1]);
+    </script>
+</body>
+</html>

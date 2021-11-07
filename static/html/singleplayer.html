@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singleplayer Game</title>
+    <link rel="stylesheet" href="/css/singleplayer.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>Singleplayer - Choose Mode</header>
+        <!--Make div modes which contains checkboxes Easy, Medium, Hard, Extreme and Custom and button Play-->
+        <div class="modes">
+            <label for="easy" class="mode">Easy
+                <input type="radio" name="mode" value="easy" id="easy" checked>
+                <span class="checkmark"><img src="/images/pumpkin.png"/></span>
+            </label>
+            <label for="medium" class="mode">Medium
+                <input type="radio" name="mode" value="medium" id="medium">
+                <span class="checkmark"><img src="/images/pumpkin.png"/></span>
+            </label>
+            <label for="hard" class="mode">Hard
+                <input type="radio" name="mode" value="hard" id="hard">
+                <span class="checkmark"><img src="/images/pumpkin.png"/></span>
+            </label>
+            <label for="extreme" class="mode">Extreme
+                <input type="radio" name="mode" value="extreme" id="extreme">
+                <span class="checkmark"><img src="/images/pumpkin.png"/></span>
+            </label>
+            <label for="custom" class="mode">Custom
+                <input type="radio" name="mode" value="custom" id="custom">
+                <span class="checkmark"><img src="/images/pumpkin.png"/></span>
+            </label>
+            <!-- If custom is checked there is inputs for N, C and D-->
+            <div class="custom">
+                <label for="N">N, Number in NxN Grid: <input type="number" name="N" id="N" min="3" max="12" value="4"></label>
+                <label for="C">C, Number of matching cards: <input type="number" name="C" id="C" min="2" max="6" value="2"></label>
+                <label for="D">D, Number of different cards: <input type="number" name="D" id="D" min="3" max="10" value="8"></label>
+                <!-- Add checkbox for Transpositing-->
+                <label for="shuffling" class="shuffle">Shuffling
+                    <input type="checkbox" name="shuffling" id="shuffling">
+                    <span class="checkmark"><img src="/images/ghost.png"/></span>
+                </label>
+            </div>
+            <button id="play">Play</button>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            //If custom is checked there is inputs for N, C and D
+            $(".mode").click(function(){
+                if($("#custom").is(":checked")){
+                    $(".custom").css("display", "flex");
+                }
+                else{
+                    $(".custom").css("display", "none");
+                }
+            });
+            // If button play is clicked, change page based on radiobutton
+            $("#play").click(function(){
+                if($("#easy").is(":checked")){
+                    window.location.href = "/singleplayer/easy";
+                }
+                else if($("#medium").is(":checked")){
+                    window.location.href = "/singleplayer/medium";
+                }
+                else if($("#hard").is(":checked")){
+                    window.location.href = "/singleplayer/hard";
+                }
+                else if($("#extreme").is(":checked")){
+                    window.location.href = "/singleplayer/extreme";
+                }
+                else if($("#custom").is(":checked")){
+                    window.location.href = "/singleplayer/custom?N=" + $("#N").val() + "&C=" + $("#C").val() + "&D=" + $("#D").val() + "&shuffling=" + $("#shuffling").is(":checked");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

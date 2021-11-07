@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/multiplayer.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Multiplayer Game</title>
+</head>
+<body>
+    <div class="container">
+        <header>Multiplayer - Join / Create Game</header>
+        <div class="modes">
+            <input type="text" name="name" id="name" placeholder="Enter Nickname">
+            <button id="creategame">Create Game</button>
+            <input type="text" name="gameid" id="gameid" placeholder="Enter Game ID"/>
+            <button id="joingame">Join Game</button>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#creategame").click(function() {
+                let name = $("#name").val();
+                if(name.length > 0) {
+                    window.location.href = "/multiplayer/create/" + name;
+                } else {
+                    alert("Please enter a nickname");
+                    return;
+                }
+            });
+            $("#joingame").click(function() {
+                let gameid = $("#gameid").val();
+                let name = $("#name").val();
+                if (gameid.length > 0 && name.length > 0) {
+                    window.location.href = "/multiplayer/join/" + gameid + "/" + name;
+                }
+                else{
+                    alert("Please enter a valid game ID and nickname");
+                    return;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
